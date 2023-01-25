@@ -6,50 +6,358 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="quiz_styles.css">
 
-    <title>🐲🐻 Volo's Quiz of Monsters 🐻🐲</title>
+
+
+    <title>🐲 Volo's Quiz of Monsters 🐲</title>
 
 </head>
 
 <body>
-    <h1 id="title"> Volo's Quiz of Monsters </h1>
+
+    <a href="#intro-jumbotron" id="big-header" class="big-header"> <!--Link jumps to info jumbotron area-->
+        <img src="sword-coast-map.png" title="A part of the map of the sword coast"
+            alt="fantasy map of the sword coast">
+    </a>
+
+
     <div id="margins" class="margins">
-        <div id="intro-jumbotron" class="jumbo">            
-            <div id="jumbo-left"> 
-            <h2 id="jumbotron-header"> Greetings traveller ... </h2>
-            <br>
-            <p id="jumbotron-text" class="jumbotron-text"> <i>"I see you're travelling the wilds of the Sword Coast. A dangerous gamble indeed.
+        <!-- JUMBOTRON WITH INTRODUCTION -->
+        <div id="intro-jumbotron" class="jumbo jumbo-stiff">
+            <div id="jumbo-left">
+
+                <h2 id="jumbotron-header">Greetings traveller ... </h2>
+                <br>
+                <p id="jumbotron-text" class="jumbotron-text">"I see you're travelling the wilds of the Sword Coast.
+                    A dangerous gamble indeed.
                     You may think yourself cunning having survived the streets of Waterdeep, but I promise you, the
                     wilds
                     are far
-                    more deadly. There's more here to be on the look-out for than pickpockets and daggers in the ribs.
-                    A lot more..."</i>
-            </p>
-            <br>
-            <p id="jumbotron-text" class="jumbotron-text"> <i>"Hey! I've an idea... Why don't we test out your knowledge of some of the beasties of the wild.
+                    more deadly. There's more here to be on the look-out for than pickpockets and daggers in the
+                    ribs.
+                    A lot more..."
+                </p>
+                <br>
+                <p id="jumbotron-text" class="jumbotron-text"> My name is Volo... or "Volothamp Geddarm" if you want
+                    to be all fancy about it.
+                    As your luck would have it, I've travelled the length and breadth of the Sword Coast, from the
+                    frigid Icewind Dales to the
+                    bewildering jungles of Chult!
+                    I know all there is to know about the dangers of the wilds.
+                </p>
+                <br>
+                <p id="jumbotron-text" class="jumbotron-text"> "Hey! I've an idea... Why don't we test out your
+                    knowledge of some of the beasties of the wild.
                     We'll see if you can tell the difference between Beholders and Banderhobbs, or...
                     Mimics and Mind Flayers, or....
                     umm....
-                    Dungeons and Dragons!" </i></p>
+                    Dungeons and Dragons!" </p>
             </div>
-            <div id="jumbo-right" class="jumbo-image" style="align-items: flex-end;" >
-                <img src="volo_wide.png">
-            </div>
+            <a href="#first-question"> <!-- Link jumps to question area-->
+                <div id="jumbo-right" class="img-big-frame" style="align-items: flex-end;">
+                    <img src="volo_wide.png" title="Volothamp Geddarm happens upon you on your travels"
+                        alt="well dressed man beseeching you">
+                </div>
+            </a>
+        </div>
 
+        <br>
+        <!-- QUESTION ONE -->
+        <div id="first-question" class="jumbo jumbo-flex">
+            <!-- Question row -->
+            <div>
+                <div>
+                    <h2> First Question </h2>
+                    <br>
+                    <div id="question-clues">
+                        <p class="questions">"My lair is filled with the treasures and riches gathered from those that
+                            seek to kill me. Even sometimes the stoney remnants of those fools too!"</p>
+                        <p class="questions">"I mete out death while I fly through the air."</p>
+                        <p class="questions">"If you cross my path there are so many ways for me to end you. Though my
+                            favourites are disintegration and petrification." </p>
+                        <p class="questions q-gold"> Which creature am I?</p>
+                        <p style="text-align: center; font-size: 12pt; font-style:normal; color: #bfbfbf;">
+                            Hover over a creatures picture to see its name. Once you've made a decision, click on the
+                            creature.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Images row -->
+            <div id="images" class="d-flex flex-fill justify-content-md-center">
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame">
+                        <img title="A hateful Beholder! Are you certain this is the correct creature?"
+                            src="Beholder_800px.png" alt="a beholder from DnD">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover">
+                        <img title="A fearsome Dragon! Are you certain this is the correct creature?"
+                            src=" Black Dragon_800px.png" alt="a black dragon from DnD">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a lich from DnD">
+                        <img title="A wretched Lich. Are you certain this is the correct creature?"
+                            src="Lich_800px.png">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mimic from DnD">
+                        <img title="A deceptive Mimic. Are you certain this is the correct creature?"
+                            src="Mimic_800px.png">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mind flayer from DnD">
+                        <img title="A terrifying Mind Flayer. Are you certain this is the correct creature?"
+                            src="Mind Flayer_800px.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- QUESTION TWO -->
+        <div hidden id="second-question" class="jumbo jumbo-flex">
+            <!-- Question row -->
+            <div>
+                <div>
+                    <h2> Second Question </h2>
+                    <br>
+                    <div id="question-clues">
+                        <p class="questions"> "I have armies of creatures at my beck and call. My unique powers give me
+                            command over their minds and bodies.</p>
+                        <p class="questions"> "I take great delight in feasting on the bodies of my enemies."</p>
+                        <p class="questions"> "My psionic powers are second only to the elder brain I am in service of."
+                        </p>
+                        <p class="questions q-gold"> Which creature am I?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Images row -->
+            <div id="images" class="d-flex flex-fill justify-content-md-center">
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame">
+                        <img title="A hateful Beholder! Are you certain this is the correct creature?"
+                            src="Beholder_800px.png" alt="a beholder from DnD">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover">
+                        <img title="A fearsome Dragon! Are you certain this is the correct creature?"
+                            src=" Black Dragon_800px.png" alt="a black dragon from DnD">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a lich from DnD">
+                        <img title="A wretched Lich! Are you certain this is the correct creature?"
+                            src="Lich_800px.png">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mimic from DnD">
+                        <img title="A deceptive Mimic! Are you certain this is the correct creature?"
+                            src="Mimic_800px.png">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mind flayer from DnD">
+                        <img title="A terrifying Mind Flayer! Are you certain this is the correct creature?"
+                            src="Mind Flayer_800px.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- QUESTION THREE -->
+        <div hidden id="third-question" class="jumbo jumbo-flex">
+            <!-- Question row -->
+            <div>
+                <div>
+                    <h2> Third Question </h2>
+                    <br>
+                    <div id="question-clues">
+                        <p class="questions">"I hide away hoards. Gold, weapons, magical items of all descriptions...
+                            whatever comes my way."</p>
+                        <p class="questions"> "Whoever seeks my treaure shall feel the fury of my bite."</p>
+                        <p class="questions"> "I am a master of blending into my environment."</p>
+                        <p class="questions q-gold"> Which creature am I?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Images row -->
+            <div id="images" class="d-flex flex-fill justify-content-md-center">
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame">
+                        <img title="A hateful Beholder! Are you certain this is the correct creature?"
+                            src="Beholder_800px.png" alt="a beholder from DnD">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover">
+                        <img title="A fearsome dragon! Are you certain this is the correct creature?"
+                            src=" Black Dragon_800px.png" alt="a black dragon from DnD">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a lich from DnD">
+                        <img title="A wretched Lich! Are you certain this is the correct creature?"
+                            src="Lich_800px.png">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mimic from DnD">
+                        <img title="A deceptive Mimic! Are you certain this is the correct creature?"
+                            src="Mimic_800px.png">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mind flayer from DnD">
+                        <img title="A terrifying Mind Flayer! Are you certain this is the correct creature?"
+                            src="Mind Flayer_800px.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- QUESTION FOUR -->
+        <div hidden id="fourth-question" class="jumbo jumbo-flex">
+            <!-- Question row -->
+            <div>
+                <div>
+                    <h2> Fourth Question </h2>
+                    <br>
+                    <div id="question-clues">
+                        <p class="questions"> "My lair is teeming with dangerous magics. Items I have built or collected
+                            over my unnaturally long life.</p>
+                        <p class="questions"> "My command of magic is near unparalleled."</p>
+                        <p class="questions"> "I cannot truly die. Not while my phylactery is kept fed with the souls of
+                            my victims."</p>
+                        <p class="questions q-gold"> Which creature am I?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Images row -->
+            <div id="images" class="d-flex flex-fill justify-content-md-center">
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame">
+                        <img title="A hateful Beholder! Are you certain this is the correct creature?"
+                            src="Beholder_800px.png" alt="a beholder from DnD">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover">
+                        <img title="A fearsome dragon! Are you certain this is the correct creature?"
+                            src=" Black Dragon_800px.png" alt="a black dragon from DnD">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a lich from DnD">
+                        <img title="A wretched Lich! Are you certain this is the correct creature?"
+                            src="Lich_800px.png">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mimic from DnD">
+                        <img title="A deceptive Mimic! Are you certain this is the correct creature?"
+                            src="Mimic_800px.png">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mind flayer from DnD">
+                        <img title="A terrifying Mind Flayer! Are you certain this is the correct creature?"
+                            src="Mind Flayer_800px.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- QUESTION FIVE -->
+        <div hidden id="fifth-question" class="jumbo jumbo-flex">
+            <!-- Question row -->
+            <div>
+                <div>
+                    <h2> Fifth Question </h2>
+                    <br>
+                    <div id="question-clues">
+                        <p class="questions"> "All manner of creatures fear and adore me. Their offerings fill my lair
+                            with vast amounts of treasure.</p>
+                        <p class="questions"> "I command the skies but prefer to deliver death up close and personal."
+                        </p>
+                        <p class="questions"> "Whether by fang, claw, tail or breath your death shall be swift."</p>
+                        <p class="questions q-gold"> Which creature am I?</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Images row -->
+            <div id="images" class="d-flex flex-fill justify-content-md-center">
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame">
+                        <img title="A hateful Beholder! Are you certain this is the correct creature?"
+                            src="Beholder_800px.png" alt="a beholder from DnD">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover">
+                        <img title="A fearsome dragon! Are you certain this is the correct creature?"
+                            src=" Black Dragon_800px.png" alt="a black dragon from DnD">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a lich from DnD">
+                        <img title="A wretched Lich! Are you certain this is the correct creature?"
+                            src="Lich_800px.png">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mimic from DnD">
+                        <img title="A deceptive Mimic! Are you certain this is the correct creature?"
+                            src="Mimic_800px.png">
+                    </div>
+                </div>
+                <div>
+                    <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mind flayer from DnD">
+                        <img title="A terrifying Mind Flayer! Are you certain this is the correct creature?"
+                            src="Mind Flayer_800px.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ANSWERS:
+    1) Beholder
+    2) Mind Flayer
+    3) Mimic
+    4) Lich
+    5) Dragon
+     -->
+
+        <!-- RESULTS -->
+        <div hidden id="results" class="jumbo">
+            <h2 id="results-header>">Results</h2>
+            <br>
+            <span id="results-intro" class="jumbotron-text">"Well... Lets see here. You got </span>
+            <span id="total-correct" class="jumbotron-text"> </span>> <!-- Add javascript results here-->
+            <span id="total-questions" class="jumbotron-text"> out of 5 questions right.</span>>
+            <span id="hints-intro" class="jumbotron-text"> You also used </span>>
+            <span id="hints-used" class="jumbotron-text"> </span>> <!--Add javascript results here-->
+            <span id="total-hints" class="jumbotron-text"> of the total 10 possible hints!</span>>
+            <br>
+            <span id="congratulations" class="jumbotron-text"> </span>> <!--Add javascript results here-->
         </div>
     </div>
-
-
-
-
-
-
-
-    </div>
-
+    <!-- NAV BAR -->
+    <nav class="navbar">
+        <div id="navbar-container" class="navbar-container">
+            <div id="button-align-left">
+                <a type="button" class="button btn btn-outline-warning" href="#big-header">Back to the top</a>
+            </div>
+            <div id="button-align-right">
+                <button type="button" class="button btn btn-outline-warning" onclick="history.go(0)">Refresh</button
+                    </div>
+            </div>
+    </nav>
 </body>
 
 </html>
