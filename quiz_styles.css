@@ -4,12 +4,12 @@ body {
     rgba(59, 20, 53, 0.2),
     rgba(32, 17, 44, 0.1)
     ),
-    url("dnd-quiz_site-background_1500px.jpg"); 
+    url("dnd-quiz_site-background_1500px.jpg");
+    background-repeat: repeat;
 }
 
 /* MARGINS --- CONTROL EVERYTHING OTHER THAN TITLE*/
-.margins {
-    display: flex;
+.margins {    
     margin-left: 15%;
     margin-right: 15%;
 }
@@ -67,6 +67,7 @@ p.jumbotron-text {
     flex-direction:row;
 }
 .jumbo-image {  
+    width:min-content;
     object-fit: cover;
     }
 
