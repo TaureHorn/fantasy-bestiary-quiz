@@ -1,0 +1,76 @@
+body {
+    background-image: linear-gradient(
+    115deg,
+    rgba(59, 20, 53, 0.2),
+    rgba(32, 17, 44, 0.1)
+    ),
+    url("dnd-quiz_site-background_1500px.jpg"); 
+}
+
+/* MARGINS --- CONTROL EVERYTHING OTHER THAN TITLE*/
+.margins {
+    display: flex;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+/* TEXT CONTROLS*/
+h2,
+p {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(225, 225, 225);
+}
+
+h1 {
+    text-align: center;
+    font-weight: 900;
+    font-size: 72pt;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: #a7936f;
+
+    /* background-image: linear-gradient(90deg,rgba(59, 20, 53, 0.5),rgba(32, 17, 44, 0.6)); */
+
+    /* border-radius: 1em; */
+    border-style: ridge;
+    border: #000000;  
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 28pt;
+}
+
+p {
+    font-weight: 200;
+    font-size: 16pt;
+
+}
+
+p.jumbotron-text {
+    font-size:12pt;
+    margin-right: -11rem;
+}
+
+
+.jumbo {
+    columns: 2;
+    background-image: linear-gradient(90deg,rgba(59, 20, 53, 0.3),rgba(32, 17, 44, 0.3));  
+    border-radius: 0.5em;
+    border: #a7936f;
+    border-style: ridge;
+    padding-left: 1em;
+
+    display: flex;
+    flex-direction:row;
+}
+.jumbo-image {  
+    object-fit: cover;
+    }
+
+.jumbo p, .jumbo h2 { 
+    font-weight:600;
+    color: #a7936f; 
+}
