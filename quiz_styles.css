@@ -1,77 +1,155 @@
 body {
-    background-image: linear-gradient(
-    115deg,
-    rgba(59, 20, 53, 0.2),
-    rgba(32, 17, 44, 0.1)
-    ),
-    url("dnd-quiz_site-background_1500px.jpg");
-    background-repeat: repeat;
+    background-image: linear-gradient(115deg,
+            rgba(88, 32, 80, 0.3),
+            rgba(19, 8, 27, 0.2)),
+        url("dnd-quiz_site-background_1500px.jpg");
+}
+
+.big-header {
+    width: 100%;
 }
 
 /* MARGINS --- CONTROL EVERYTHING OTHER THAN TITLE*/
-.margins {    
+.margins {
+    /* display: flex; */
     margin-left: 15%;
     margin-right: 15%;
 }
 
 /* TEXT CONTROLS*/
 h2,
-p {
+p,
+span {
     font-family: 'Times New Roman', Times, serif;
-    color: rgb(225, 225, 225);
-}
-
-h1 {
-    text-align: center;
-    font-weight: 900;
-    font-size: 72pt;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: 10%;
-    margin-right: 10%;
-    color: #a7936f;
-
-    /* background-image: linear-gradient(90deg,rgba(59, 20, 53, 0.5),rgba(32, 17, 44, 0.6)); */
-
-    /* border-radius: 1em; */
-    border-style: ridge;
-    border: #000000;  
+    color: #ffd993;
+    font-weight: 600;
+    text-align: justify;
+    font-style: italic;
 }
 
 h2 {
-    font-weight: 600;
-    font-size: 28pt;
+    font-size: 24pt;
+    margin-top: 2%;
+    text-decoration: underline;
 }
 
 p {
-    font-weight: 200;
-    font-size: 16pt;
-
+    font-size: 12pt;
 }
 
 p.jumbotron-text {
-    font-size:12pt;
-    margin-right: -11rem;
+    margin-right: -10rem;
 }
 
+.questions {
+    text-align: justify;
+    font-size: 16pt;
+}
+
+.q-gold {
+    color: rgb(255, 180, 0);
+}
+
+/* CONTAINER CONTROL */
 
 .jumbo {
-    columns: 2;
-    background-image: linear-gradient(90deg,rgba(59, 20, 53, 0.3),rgba(32, 17, 44, 0.3));  
-    border-radius: 0.5em;
-    border: #a7936f;
-    border-style: ridge;
+    margin-top: 2%;
+    margin-bottom: 2%;
     padding-left: 1em;
 
-    display: flex;
-    flex-direction:row;
 }
-.jumbo-image {  
-    width:min-content;
-    object-fit: cover;
-    }
 
-.jumbo p, .jumbo h2 { 
-    font-weight:600;
-    color: #a7936f; 
+.jumbo,
+.img-frame {
+    background-image: linear-gradient(90deg, rgba(59, 20, 53, 0.3), rgba(32, 17, 44, 0.3));
+    border: 1px, solid;
+    border-radius: 0.5em;
+    border-color: #a7813b;
+    ;
+    border-style: ridge;
+
+
+}
+
+.jumbo-stiff {
+    columns: 2;
+    display: flex;
+    flex-direction: row;
+    /* media query bootstrap for mobile view 
+    https://www.w3schools.com/cssref/css3_pr_mediaquery.php */
+
+}
+
+.jumbo-flex {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 1em;
+
+}
+
+.img-big-frame {
+    border-color: #a7813b;
+    display: flex;
+
+}
+
+.img-frame {
+    background-color: #00000093;
+    border-color: #a7813b;
+    width: 25vh;
+    height: 25vh;
+    overflow: hidden;
+    display: flex-wrap;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0.4em;
+    margin-bottom: 1em;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+        rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+        rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+        rgba(0, 0, 0, 0.06) 0px 2px 1px,
+        rgba(0, 0, 0, 0.09) 0px 4px 2px,
+        rgba(0, 0, 0, 0.09) 0px 8px 4px,
+        rgba(0, 0, 0, 0.09) 0px 16px 8px,
+        rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+img,
+.img-big-frame {
+    max-width: inherit;
+    max-height: inherit;
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+}
+
+.img-frame:hover,
+.button:hover {
+    background-color: #a7813b98;
+    border-color: #ffffff;
+}
+
+.navbar {
+    margin-top: 10vh;
+    width: 100%;
+    height: 6vh;
+    background-color: #a7813b9f;
+    border-color: #a7813b;
+    border-style: ridge;
+}
+
+.navbar-container {
+    display: inline-flex;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+
+.button {
+    width: 15vw;
+    display: inherit;
+    padding-left: 2%;
+    padding-right: 2%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-style: italic;
 }
