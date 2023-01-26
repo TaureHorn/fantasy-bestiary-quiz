@@ -12,7 +12,7 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="quiz_styles.css">
 
-
+    <script defer src="quiz_js.js"></script>
 
     <title>🐲 Volo's Quiz of Monsters 🐲</title>
 
@@ -20,17 +20,42 @@
 
 <body>
 
-    <a href="#intro-jumbotron" id="big-header" class="big-header"> <!--Link jumps to info jumbotron area-->
+    <a href="#intro-context" id="big-header" href="#intro-jumbotron" class="big-header">
+        <!--Link jumps to info jumbotron area-->
         <img src="sword-coast-map.png" title="A part of the map of the sword coast"
             alt="fantasy map of the sword coast">
     </a>
 
-
     <div id="margins" class="margins">
+        <div id="intro-context">
+            <div id="context-jumbotron" class="jumbo jumbo-flex">
+                <h2> Your journey so far...</h2>
+                <p> Things in Waterdeep have only been getting worse of late. There's talk in the
+                    wider world that other cities on the Sword Coast have been razed by devils. That the cities
+                    themselves are being dragged down into the Nine Hells! The Lords of Waterdeep and the
+                    Lords Alliance have been pissing away gold trying to increase their defences. Diverting
+                    money away from practically everywhere else it is needed. The Zhentarim love this and their
+                    stranglehold on people and their coinpurses has only tightened.
+                </p>
+                <p> It's only a matter of time, you think, until something really bad
+                    happens. Zhent, war, famine or an invasion from the Nine Hells. Whatever it is you're
+                    not sticking around to find out. Three days ago you grabbed whatever belongings you could carry and
+                    left
+                    the city.
+                    Where you're headed you haven't yet decided. Maybe Cormyr... Hells! Even Chult would be better than
+                    here.
+                </p>
+                <p> Now, on your way to Daggerford, as you are nestled by a campfire, a well dressed man approaches you.
+                    He has an ease about him that is not befitting the dangers of life outside a city.
+                </p>
+            </div>
+            <!--Deactivate intro-context, activate intro-jumbotron, scroll to jumbotron-->
+            <a href="#intro-jumbotron" style="text-decoration: none;margin-left: 40%;" id="go-to-intro" type="button"
+                class="button btn btn-outline-warning" onclick="showIntro()">Continue...</a>
+        </div>
         <!-- JUMBOTRON WITH INTRODUCTION -->
-        <div id="intro-jumbotron" class="jumbo jumbo-stiff">
+        <div id="intro-jumbotron" class="jumbo jumbo-stiff" style="display:none">
             <div id="jumbo-left">
-
                 <h2 id="jumbotron-header">Greetings traveller ... </h2>
                 <br>
                 <p id="jumbotron-text" class="jumbotron-text">"I see you're travelling the wilds of the Sword Coast.
@@ -58,17 +83,17 @@
                     umm....
                     Dungeons and Dragons!" </p>
             </div>
-            <a href="#first-question"> <!-- Link jumps to question area-->
-                <div id="jumbo-right" class="img-big-frame" style="align-items: flex-end;">
-                    <img src="volo_wide.png" title="Volothamp Geddarm happens upon you on your travels"
-                        alt="well dressed man beseeching you">
-                </div>
-            </a>
+            <div id="jumbo-right" class="img-big-frame" style="align-items: flex-end;">
+                <img src="volo_wide.png" title="Volothamp Geddarm happens upon you on your travels"
+                    alt="well dressed man beseeching you">
+            </div>
         </div>
 
+        <a id="go-to-questions" href="#first-question" style="display:none; text-decoration: none;margin-left: 40%;"
+            id="go-to-intro" type="button" class="button btn btn-outline-warning" onclick="showQ1()">Continue...</a>
         <br>
         <!-- QUESTION ONE -->
-        <div id="first-question" class="jumbo jumbo-flex">
+        <div id="first-question" class="jumbo jumbo-flex" style="display:none">
             <!-- Question row -->
             <div>
                 <div>
@@ -81,7 +106,7 @@
                         <p class="questions">"If you cross my path there are so many ways for me to end you. Though my
                             favourites are disintegration and petrification." </p>
                         <p class="questions q-gold"> Which creature am I?</p>
-                        <p style="text-align: center; font-size: 12pt; font-style:normal; color: #bfbfbf;">
+                        <p class="q-hint">
                             Hover over a creatures picture to see its name. Once you've made a decision, click on the
                             creature.</p>
                     </div>
@@ -92,37 +117,40 @@
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame">
                         <img title="A hateful Beholder! Are you certain this is the correct creature?"
-                            src="Beholder_800px.png" alt="a beholder from DnD">
+                            src="Beholder_800px.png" alt="a beholder from DnD" onclick="q1(beholder);showQ2()"
+                            id="q1a1">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover">
                         <img title="A fearsome Dragon! Are you certain this is the correct creature?"
-                            src=" Black Dragon_800px.png" alt="a black dragon from DnD">
+                            src=" Black Dragon_800px.png" alt="a black dragon from DnD" onclick="q1(dragon);showQ2()"
+                            id="q1a2">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a lich from DnD">
-                        <img title="A wretched Lich. Are you certain this is the correct creature?"
-                            src="Lich_800px.png">
+                        <img title="A wretched Lich. Are you certain this is the correct creature?" src="Lich_800px.png"
+                            alt="an undead man in robes" onclick="q1(lich);showQ2()" id="q1a3">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mimic from DnD">
                         <img title="A deceptive Mimic. Are you certain this is the correct creature?"
-                            src="Mimic_800px.png">
+                            src="Mimic_800px.png" alt="a snarling mimic" onclick="q1(mimic);showQ2()" id="q1a4">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mind flayer from DnD">
                         <img title="A terrifying Mind Flayer. Are you certain this is the correct creature?"
-                            src="Mind Flayer_800px.png">
+                            src="Mind Flayer_800px.png" alt="a tentacle faced mind flayer"
+                            onclick="q1(mindFlayer);showQ2()" id="q1a5">
                     </div>
                 </div>
             </div>
         </div>
         <!-- QUESTION TWO -->
-        <div hidden id="second-question" class="jumbo jumbo-flex">
+        <div id="second-question" class="jumbo jumbo-flex" style="display:none">
             <!-- Question row -->
             <div>
                 <div>
@@ -135,6 +163,9 @@
                         <p class="questions"> "My psionic powers are second only to the elder brain I am in service of."
                         </p>
                         <p class="questions q-gold"> Which creature am I?</p>
+                        <p class="q-hint">
+                            Hover over a creatures picture to see its name. Once you've made a decision, click on the
+                            creature.</p>
                     </div>
                 </div>
             </div>
@@ -143,37 +174,40 @@
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame">
                         <img title="A hateful Beholder! Are you certain this is the correct creature?"
-                            src="Beholder_800px.png" alt="a beholder from DnD">
+                            src="Beholder_800px.png" alt="a beholder from DnD" onclick="q2(beholder);showQ3()"
+                            id="q2a1">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover">
                         <img title="A fearsome Dragon! Are you certain this is the correct creature?"
-                            src=" Black Dragon_800px.png" alt="a black dragon from DnD">
+                            src=" Black Dragon_800px.png" alt="a black dragon from DnD" onclick="q2(dragon);showQ3()"
+                            id="q2a2">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a lich from DnD">
-                        <img title="A wretched Lich! Are you certain this is the correct creature?"
-                            src="Lich_800px.png">
+                        <img title="A wretched Lich! Are you certain this is the correct creature?" src="Lich_800px.png"
+                            alt="an undead man in robes" onclick="q2(lich);showQ3()" id="q2a3">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mimic from DnD">
                         <img title="A deceptive Mimic! Are you certain this is the correct creature?"
-                            src="Mimic_800px.png">
+                            src="Mimic_800px.png" alt="a snarling mimic" onclick="q2(mimic);showQ3()" id="q2a4">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mind flayer from DnD">
                         <img title="A terrifying Mind Flayer! Are you certain this is the correct creature?"
-                            src="Mind Flayer_800px.png">
+                            src="Mind Flayer_800px.png" alt="a tentacle faced mind flayer"
+                            onclick="q2(mindFlayer);showQ3()" id="q2a5">>
                     </div>
                 </div>
             </div>
         </div>
         <!-- QUESTION THREE -->
-        <div hidden id="third-question" class="jumbo jumbo-flex">
+        <div id="third-question" class="jumbo jumbo-flex" style="display:none">
             <!-- Question row -->
             <div>
                 <div>
@@ -185,6 +219,9 @@
                         <p class="questions"> "Whoever seeks my treaure shall feel the fury of my bite."</p>
                         <p class="questions"> "I am a master of blending into my environment."</p>
                         <p class="questions q-gold"> Which creature am I?</p>
+                        <p class="q-hint">
+                            Hover over a creatures picture to see its name. Once you've made a decision, click on the
+                            creature.</p>
                     </div>
                 </div>
             </div>
@@ -193,37 +230,40 @@
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame">
                         <img title="A hateful Beholder! Are you certain this is the correct creature?"
-                            src="Beholder_800px.png" alt="a beholder from DnD">
+                            src="Beholder_800px.png" alt="a beholder from DnD" onclick="q3(beholder);showQ4()"
+                            id="q3a1">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover">
                         <img title="A fearsome dragon! Are you certain this is the correct creature?"
-                            src=" Black Dragon_800px.png" alt="a black dragon from DnD">
+                            src=" Black Dragon_800px.png" alt="a black dragon from DnD" onclick="q3(dragon);showQ4()"
+                            id="q3a2">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a lich from DnD">
-                        <img title="A wretched Lich! Are you certain this is the correct creature?"
-                            src="Lich_800px.png">
+                        <img title="A wretched Lich! Are you certain this is the correct creature?" src="Lich_800px.png"
+                            alt="an undead man in robes" onclick="q3(lich);showQ4()" id="q3a3">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mimic from DnD">
                         <img title="A deceptive Mimic! Are you certain this is the correct creature?"
-                            src="Mimic_800px.png">
+                            src="Mimic_800px.png" alt="a snarling mimic" onclick="q3(mimic);showQ4()" id="q3a4">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mind flayer from DnD">
                         <img title="A terrifying Mind Flayer! Are you certain this is the correct creature?"
-                            src="Mind Flayer_800px.png">
+                            src="Mind Flayer_800px.png" alt="a tentacle faced mind flayer"
+                            onclick="q3(mindFlayer);showQ4()" id="q3a5">>
                     </div>
                 </div>
             </div>
         </div>
         <!-- QUESTION FOUR -->
-        <div hidden id="fourth-question" class="jumbo jumbo-flex">
+        <div id="fourth-question" class="jumbo jumbo-flex" style="display:none">
             <!-- Question row -->
             <div>
                 <div>
@@ -236,6 +276,9 @@
                         <p class="questions"> "I cannot truly die. Not while my phylactery is kept fed with the souls of
                             my victims."</p>
                         <p class="questions q-gold"> Which creature am I?</p>
+                        <p class="q-hint">
+                            Hover over a creatures picture to see its name. Once you've made a decision, click on the
+                            creature.</p>
                     </div>
                 </div>
             </div>
@@ -244,37 +287,40 @@
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame">
                         <img title="A hateful Beholder! Are you certain this is the correct creature?"
-                            src="Beholder_800px.png" alt="a beholder from DnD">
+                            src="Beholder_800px.png" alt="a beholder from DnD" onclick="q4(beholder);showQ5()"
+                            id="q4a1">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover">
                         <img title="A fearsome dragon! Are you certain this is the correct creature?"
-                            src=" Black Dragon_800px.png" alt="a black dragon from DnD">
+                            src=" Black Dragon_800px.png" alt="a black dragon from DnD" onclick="q4(dragon);showQ5()"
+                            id="q4a2">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a lich from DnD">
-                        <img title="A wretched Lich! Are you certain this is the correct creature?"
-                            src="Lich_800px.png">
+                        <img title="A wretched Lich! Are you certain this is the correct creature?" src="Lich_800px.png"
+                            alt="an undead man in robes" onclick="q4(lich);showQ5()" id="q4a3">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mimic from DnD">
                         <img title="A deceptive Mimic! Are you certain this is the correct creature?"
-                            src="Mimic_800px.png">
+                            src="Mimic_800px.png" alt="a snarling mimic" onclick="q4(mimic);showQ5()" id="q4a4">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mind flayer from DnD">
                         <img title="A terrifying Mind Flayer! Are you certain this is the correct creature?"
-                            src="Mind Flayer_800px.png">
+                            src="Mind Flayer_800px.png" alt="a tentacle faced mind flayer"
+                            onclick="q4(mindFlayer);showQ5()" id="q4a5">>
                     </div>
                 </div>
             </div>
         </div>
         <!-- QUESTION FIVE -->
-        <div hidden id="fifth-question" class="jumbo jumbo-flex">
+        <div id="fifth-question" class="jumbo jumbo-flex" style="display:none">
             <!-- Question row -->
             <div>
                 <div>
@@ -287,6 +333,9 @@
                         </p>
                         <p class="questions"> "Whether by fang, claw, tail or breath your death shall be swift."</p>
                         <p class="questions q-gold"> Which creature am I?</p>
+                        <p class="q-hint">
+                            Hover over a creatures picture to see its name. Once you've made a decision, click on the
+                            creature.</p>
                     </div>
                 </div>
             </div>
@@ -295,31 +344,34 @@
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame">
                         <img title="A hateful Beholder! Are you certain this is the correct creature?"
-                            src="Beholder_800px.png" alt="a beholder from DnD">
+                            src="Beholder_800px.png" alt="a beholder from DnD" onclick="q5(beholder);showResults()"
+                            id="q5a1">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover">
                         <img title="A fearsome dragon! Are you certain this is the correct creature?"
-                            src=" Black Dragon_800px.png" alt="a black dragon from DnD">
+                            src=" Black Dragon_800px.png" alt="a black dragon from DnD"
+                            onclick="q5(dragon);showResults()" id="q5a2">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a lich from DnD">
-                        <img title="A wretched Lich! Are you certain this is the correct creature?"
-                            src="Lich_800px.png">
+                        <img title="A wretched Lich! Are you certain this is the correct creature?" src="Lich_800px.png"
+                            alt="an undead man in robes" onclick="q5(lich);showResults()" id="q5a3">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mimic from DnD">
                         <img title="A deceptive Mimic! Are you certain this is the correct creature?"
-                            src="Mimic_800px.png">
+                            src="Mimic_800px.png" alt="a snarling mimic" onclick="q5(mimic);showResults()" id="q5a4">
                     </div>
                 </div>
                 <div>
                     <div id="img-frame" class="d-flex flex-fill img-frame img-hover" alt="a mind flayer from DnD">
                         <img title="A terrifying Mind Flayer! Are you certain this is the correct creature?"
-                            src="Mind Flayer_800px.png">
+                            src="Mind Flayer_800px.png" alt="a tentacle faced mind flayer"
+                            onclick="q5(mindFlayer);showResults()" id="q5a5">>
                     </div>
                 </div>
             </div>
@@ -334,29 +386,33 @@
      -->
 
         <!-- RESULTS -->
-        <div hidden id="results" class="jumbo">
-            <h2 id="results-header>">Results</h2>
-            <br>
-            <span id="results-intro" class="jumbotron-text">"Well... Lets see here. You got </span>
-            <span id="total-correct" class="jumbotron-text"> </span>> <!-- Add javascript results here-->
-            <span id="total-questions" class="jumbotron-text"> out of 5 questions right.</span>>
-            <span id="hints-intro" class="jumbotron-text"> You also used </span>>
-            <span id="hints-used" class="jumbotron-text"> </span>> <!--Add javascript results here-->
-            <span id="total-hints" class="jumbotron-text"> of the total 10 possible hints!</span>>
-            <br>
-            <span id="congratulations" class="jumbotron-text"> </span>> <!--Add javascript results here-->
+        <div id="results" class="jumbo jumbo-stiff" style="display:none">
+            <div id="jumbo-left">
+                <h2 id="results-header">Results!</h2>
+                <br>
+                <p id="results-intro" class="jumbotron-text questions">"I think I saw a few looks
+                    of recognition on your face, a few flashes of intellect!</p>
+                <p id="results" class="jumbotron-text questions">Well... Lets see here. You correctly identified </p>
+                <h2 id="total-correct" class="q-gold" style="font-size: 36pt;text-align:center; text-decoration: none;"> </h2><!-- javascript quizResult here-->
+                <br>
+                <p id="congratulations" class="jumbotron-text questions q-gold"> </p> <!-- javascript quizResultResponese here-->
+            </div>
+            <div id="jumbo-right" class="img-big-frame" style="align-items: flex-end;">
+                <img src="volo_wide.png" title="Volothamp Geddarm reviews how you did on his quiz"
+                    alt="well dressed man beseeching you" />
+            </div>
         </div>
-    </div>
+    </div id="margins">
     <!-- NAV BAR -->
-    <nav class="navbar">
+    <nav id="navbar" class="navbar" style="display:none">
         <div id="navbar-container" class="navbar-container">
             <div id="button-align-left">
                 <a type="button" class="button btn btn-outline-warning" href="#big-header">Back to the top</a>
             </div>
             <div id="button-align-right">
-                <button type="button" class="button btn btn-outline-warning" onclick="history.go(0)">Refresh</button
-                    </div>
+                <button type="button" class="button btn btn-outline-warning" onclick="history.go(0)">Refresh</button>
             </div>
+        </div>
     </nav>
 </body>
 
