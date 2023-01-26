@@ -9,14 +9,14 @@ body {
     width: 100%;
 }
 
-/* MARGINS --- CONTROL EVERYTHING OTHER THAN TITLE*/
+/* ====== MARGINS --- CONTROL EVERYTHING OTHER THAN TITLE ===*/
 .margins {
     /* display: flex; */
     margin-left: 15%;
     margin-right: 15%;
 }
 
-/* TEXT CONTROLS*/
+/* ====================== TEXT CONTROLS ===================*/
 h2,
 p,
 span {
@@ -42,7 +42,7 @@ p.jumbotron-text {
 }
 
 .questions {
-    text-align: justify;
+    text-align: left;
     font-size: 16pt;
 }
 
@@ -50,7 +50,13 @@ p.jumbotron-text {
     color: rgb(255, 180, 0);
 }
 
-/* CONTAINER CONTROL */
+.q-hint {
+    font-style: normal;
+    color: #bfbfbf;
+    font-size: 11pt;
+}
+
+/* ======================== CONTAINER CONTROL ============ */
 
 .jumbo {
     margin-top: 2%;
@@ -88,8 +94,8 @@ p.jumbotron-text {
 }
 
 .img-big-frame {
-    border-color: #a7813b;
-    display: flex;
+    height: 100%;
+   
 
 }
 
@@ -114,8 +120,7 @@ p.jumbotron-text {
         rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
-img,
-.img-big-frame {
+img {
     max-width: inherit;
     max-height: inherit;
     height: inherit;
@@ -152,4 +157,5 @@ img,
     font-family: 'Times New Roman', Times, serif;
     font-weight: 600;
     font-style: italic;
+    text-align: center;
 }
