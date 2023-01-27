@@ -19,7 +19,7 @@ body {
 /* ====================== TEXT CONTROLS ===================*/
 h2,
 p,
-span {
+.hyperlink {
     font-family: 'Times New Roman', Times, serif;
     color: #ffd993;
     font-weight: 600;
@@ -41,7 +41,8 @@ p.jumbotron-text {
     margin-right: -10rem;
 }
 
-.questions {
+.questions,
+.hyperlink {
     text-align: left;
     font-size: 16pt;
 }
@@ -95,7 +96,7 @@ p.jumbotron-text {
 
 .img-big-frame {
     height: 100%;
-   
+
 
 }
 
@@ -133,11 +134,16 @@ img {
     background-color: #a7813b98;
     border-color: #ffffff;
 }
+.img-frame:active,
+button:active {
+    background-color: rgb(255, 196, 0);
+    border-color:rgb(255,196,0);
+}
 
 .navbar {
     margin-top: 10vh;
     width: 100%;
-    height: 6vh;
+    height: 4.75vh;
     background-color: #a7813b9f;
     border-color: #a7813b;
     border-style: ridge;
