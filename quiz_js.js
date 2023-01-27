@@ -1,7 +1,5 @@
 
 // =============== DECLARATIONS ================================================================
-
-const totalAnswers = 5 // edit for total number of questions.
 const correctAnswersTally = [] // update when a question is answered correctly
 const questionAnswers = ["Beholder", "Dragon", "Lich", "Mimic", "Mind Flayer"]
 
@@ -11,19 +9,9 @@ const lich = questionAnswers[2]
 const mimic = questionAnswers[3]
 const mindFlayer = questionAnswers[4]
 
-// const quizScore = correctAnswersTally.length
-
 // =============== FUNCTIONS ================================================================
 
-// // Keep tally of questions answered correctly
-// function correctAnswer(count) {
-//     if (correctAnswersTally.length <= totalAnswers) {
-//     correctAnswersTally.push(count) && console.log("Added correct answer to tally")
-//     }
-//     else {
-//         return alert("Well well well... Look at the big brain on you! You answered all the questions correct ")
-//     }
-// }
+
 // ================= ELEMENT SHOW/HIDE FUNCTIONS ============================================
 
 function showIntro() {
@@ -66,58 +54,46 @@ function showResults() {
     document.getElementById("navbar").scrollIntoView();
     quizResult(correctAnswersTally);
     quizResultResponse(correctAnswersTally)
-    console.log(quizResult)
-    console.log(quizResultResponse)
 }
 
 // ================= QUESTION FUNCTIONS =====================================================
 function q1(param) {
     if (param === "Beholder") {
-        correctAnswersTally.push("First")
-            && console.log(param, "is correct. Adding to the tally of correct answers and moving to the next question.")
-            && changeQuestion2();
+        correctAnswersTally.push("First") && showQ2();
     } else {
-        console.log(param, "is incorrect. Moving to next question.") && changeQuestion2();
+        showQ2();
     }
 }
 
 function q2(param) {
     if (param === "Mind Flayer") {
-        correctAnswersTally.push("Second")
-            && console.log(param, "is correct. Adding to the tally of correct answers and moving to the next question.")
-            && changeQuestion3();
+        correctAnswersTally.push("Second") && showQ3();
     } else {
-        console.log(param, "is incorrect. Moving to next question.") && changeQuestion3();
+        showQ3();
     }
 }
 
 function q3(param) {
     if (param === "Mimic") {
-        correctAnswersTally.push("Third")
-            && console.log(param, "is correct. Adding to the tally of correct answers and moving to the next question.")
-            && changeQuestion4();
+        correctAnswersTally.push("Third") && showQ4();
     } else {
-        console.log(param, "is incorrect. Moving to next question.") && changeQuestion4();
+        showQ4();
     }
 }
 
 function q4(param) {
     if (param === "Lich") {
-        correctAnswersTally.push("Fourth")
-            && console.log(param, "is correct. Adding to the tally of correct answers and moving to the next question.")
-            && changeQuestion5();
+        correctAnswersTally.push("Fourth") && showQ5();
     } else {
-        console.log(param, "is incorrect. Moving to next question.") && changeQuestion5();
+        showQ5();
     }
 }
 
 function q5(param) {
     if (param === "Dragon") {
-        correctAnswersTally.push("Fifth")
-            && console.log(param, "is correct. Adding to the tally of correct answers and moving to the next question.")
-            && changeResults();
+        correctAnswersTally.push("Fifth") && showResults();
     } else {
-        console.log(param, "is incorrect. Moving to next question.") && changeResults();
+        showResults();
     }
 }
 // ================= RESULTS FUNCTIONS =====================================================
@@ -129,18 +105,18 @@ function quizResult(correctAnswersTally) {
 function quizResultResponse(correctAnswersTally) {
     let response;
     if (correctAnswersTally.length === 0) {
-        response = "Really! None! You'd better get praying, because only the Gods will keep you alive out here!";
+        response = "\"Really! None! You'd better get praying, because only the Gods will keep you alive out here!\"";
     } else if (correctAnswersTally.length === 1) {
-        response = "Well. We'd better hope if you encounter anything out here, it's that one thing, and that one thing alone!";
+        response = "\Well. We'd better hope if you encounter anything out here, it's that one thing, and that one thing alone!\"";
     } else if (correctAnswersTally.length === 2) {
-        response = "Not bad. I think with some luck, and Gods willing, you should just about survive out here.";
+        response = "\"Not bad. I think with some luck, and Gods willing, you should just about survive out here.\"";
     } else if (correctAnswersTally.length === 3) {
-        response = "Yes. Well done. You're well on you way to surviving these dangerous beasties. Or at least knowing which ones to run away from!";    
+        response = "\"Yes. Well done. You're well on you way to surviving these dangerous beasties. Or at least knowing which ones to run away from!\"";
     } else if (correctAnswersTally.length === 4) {
-        response = "Ah! Well done! There's some cunning in you after all, it seems. You'll survive just fine out here.";
+        response = "\"Ah! Well done! There's some cunning in you after all, it seems. You'll survive just fine out here.\"";
     } else {
-        response = "Shit and ashes! Are you trying to put me out of job! You'd best get yourself to Candlekeep, I think Elminster would love you!";
-    } 
+        response = "\"Shit and ashes! Are you trying to put me out of job! You'd best get yourself to Candlekeep. Elminster is going to love you!\"";
+    }
     document.getElementById("congratulations").innerText = (response);
 }
 
